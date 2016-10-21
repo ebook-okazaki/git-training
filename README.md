@@ -1,2 +1,2 @@
-# my-site-github
+# git-practice
 朝食と昼食まとめ用リポジトリ

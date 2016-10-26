@@ -10,14 +10,14 @@ issue用ブランチはstagingから切る
 
 ## 朝食リポジトリ
 `アプリ内書店の開発のように、リリースまでの開発期間が長いブランチ戦略`
-- issue作成者：issue用ブランチへのPRレビュー(最低1回は修正依頼を出す)、staging・masterへのPR作成を行う
+- issue作成者：朝食リポジトリでのissue作成、issue用ブランチへのPRレビュー(最低1回は修正依頼を出す)、staging・masterへのPR作成を行う
 - branch作成者：issueが発行された後、stagingからissue用ブランチを作成する
 - PR担当者(朝食報告、2名)：issue用ブランチから作業用ブランチを作成し、issue用ブランチへのPRを作成する
 - リリース担当者：staging・masterへのリリース(PRレビュー)を行う
 
 ## 昼食リポジトリ
 `開発内容を即時リリースするように、リリースまでの開発期間が短いブランチ戦略`
-- issue作成者：issue用ブランチへのPRレビュー(最低1回は修正依頼を出す)、staging・masterへのPR作成を行う
+- issue作成者：昼食リポジトリでのissue作成、issue用ブランチへのPRレビュー(最低1回は修正依頼を出す)、staging・masterへのPR作成を行う
 - branch作成者：issueが発行された後、stagingからissue用ブランチを作成する
 - PR担当者(昼食報告、1名)：issue用ブランチから作業用ブランチを作成し、issue用ブランチへのPRを作成する
 - リリース担当者：staging・masterへのリリース(PRレビュー)を行う

@@ -43,10 +43,11 @@ issue用ブランチはstagingブランチから切る
  - masterブランチへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
 ※昼食でのstagingブランチへのPRレビュー順
- 【issue用ブランチ】
+
+- 【issue用ブランチ】
  - ↓[issue作成者レビュー(PRでレビューした旨のコメント記載)]
  - ↓[検収担当者レビュー(PRマージ実行)]
- 【stagingブランチ】
+- 【stagingブランチ】
 
 # herokuについて
 

@@ -67,10 +67,10 @@ issue用ブランチはstagingブランチから切る
 
 ## ブランチの種類
 
-- master branch
-- staging branch
-- issue branch
-- issue child branch
+- master branch：本番環境にデプロイするコードを格納するブランチ
+- staging branch：staging環境にデプロイするコードを格納するブランチ
+- issue branch：staging branchを起点とし、issueの開発を実装したコードを格納するブランチ
+- issue child branch：issue branchを起点とし、issueの開発に関する小さな単位の機能を実装したコードを格納するブランチ
 
 ## ブランチの初期設定
 

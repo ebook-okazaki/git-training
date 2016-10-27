@@ -18,7 +18,7 @@ issue用ブランチはstagingブランチから切る
  - staging・masterブランチへのPR作成
 - branch作成者
  - issueが発行された後、stagingブランチからissue用ブランチを作成
-- PR担当者(朝食報告、2名)
+- 開発担当者(朝食報告、2名)
  - issue用ブランチから作業用ブランチを作成し、issue用ブランチへのPRを作成
 - 検収担当者
  - stagingブランチへのリリース(PRレビュー)実施
@@ -34,7 +34,7 @@ issue用ブランチはstagingブランチから切る
  - masterブランチへのPR作成
 - branch作成者
  - issueが発行された後、stagingブランチからissue用ブランチを作成
-- PR担当者(昼食報告、1名)
+- 開発担当者(昼食報告、1名)
  - issue用ブランチで作業を行い、stagingブランチへのPRを作成
 - 検収担当者
  - stagingブランチへのリリース(PRレビュー)実施

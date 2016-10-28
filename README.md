@@ -6,7 +6,7 @@
 - [昼食リポジトリ](https://github.com/matsuo-y/git-practice-lunch)
 - [昼食本番環境(github)](https://matsuo-y.github.io/git-practice-lunch/)
 
-issueブランチはstagingブランチから切る
+- [waffleかんばん](https://waffle.io/matsuo-y/git-practice)
 
 # ブランチについて
 
@@ -73,7 +73,7 @@ issueブランチはstagingブランチから切る
  - stagingブランチをもとにmasterブランチへのPRを作成し、stagingブランチをデプロイした結果を確認した後、masterブランチへのPRをマージする
  - masterブランチへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
-※昼食でのstagingブランチへのPRレビュー順
+__ ※昼食でのstagingブランチへのPRレビュー順 __
 
 - 【issueブランチ】
  - ↓[issue作成者レビュー(PRでレビューした旨のコメント記載)]
@@ -84,12 +84,12 @@ issueブランチはstagingブランチから切る
 
 ## 朝食
 
-- review app環境(PRごとに作成)：https://git-practice-breakfast-pr-{N}.herokuapp.com/
+- review app環境(対象ブランチ：matsuo-y/git-practice-breakfastのPRマージ元issueブランチ)：https://git-practice-breakfast-pr-{N}.herokuapp.com/
 - ステージング環境(対象ブランチ：matsuo-y/git-practice-breakfastのstaging)：https://staging-git-practice-breakfast.herokuapp.com/
 - 本番環境(対象ブランチ：matsuo-y/git-practice-breakfastのmaster)：https://git-practice-breakfast.herokuapp.com/
 
 ## 昼食
 
-- review app環境(PRごとに作成)：https://git-practice-lunch-pr-{N}.herokuapp.com/
+- review app環境(対象ブランチ：matsuo-y/git-practice-lunchのPRマージ元issueブランチ)：https://git-practice-lunch-pr-{N}.herokuapp.com/
 - ステージング環境(対象ブランチ：matsuo-y/git-practice-lunchのstaging)：https://staging-git-practice-lunch.herokuapp.com/
 - 本番環境(対象ブランチ：matsuo-y/git-practice-lunchのmaster)：https://git-practice-lunch.herokuapp.com/

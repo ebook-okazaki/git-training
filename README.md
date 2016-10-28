@@ -46,7 +46,7 @@
 - issue作成者
  - 朝食リポジトリでのissue作成
  - issue branchへのPRレビュー(最低1回は修正依頼を出す)
- - staging・masterブランチへのPR作成
+ - staging・master branchへのPR作成
 - branch作成者
  - issueが発行された後、staging branchからissue branchを作成
 - 開発担当者(朝食報告、2名)
@@ -73,7 +73,7 @@
  - staging branchをもとにmaster branchへのPRを作成し、staging branchをデプロイした結果を確認した後、master branchへのPRをマージする
  - master branchへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
-__ ※昼食でのstagingブランチへのPRレビュー順 __
+__ ※昼食でのstaging branchへのPRレビュー順 __
 
 - 【issue branch】
  - ↓[issue作成者レビュー(PRでレビューした旨のコメント記載)]

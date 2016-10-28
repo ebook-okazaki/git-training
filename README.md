@@ -8,6 +8,37 @@
 
 issueブランチはstagingブランチから切る
 
+# ブランチについて
+
+## ブランチの種類
+
+- master branch：本番環境にデプロイするコードを格納するブランチ
+- staging branch：staging環境にデプロイするコードを格納するブランチ
+- issue branch：staging branchを起点とし、issueの開発を実装したコードを格納するブランチ
+- issue child branch：issue branchを起点とし、issueの開発に関する小さな単位の機能を実装したコードを格納するブランチ
+
+## ブランチの初期設定
+
+- master branch
+ - github.com リポジトリの設定で、誰かが誤って削除しないように、force pushしないように、プロテクトする
+ - github.com リポジトリの設定で、誰かが直接コミットしないように、PRを通して、マージするように設定する
+
+- staging branch
+ - github.com リポジトリの設定で、誰かが誤って削除しないように、force pushしないように、プロテクトする
+ - github.com リポジトリの設定で、誰かが直接コミットしないように、PRを通して、マージするように設定する
+
+## ブランチのマージルール
+- master branchは、staging branchからのPRのみを受け付ける
+- staging branchは、issue branchからのPRのみを受け付ける
+- issue branchは、issue child branchからのPRのみを受け付ける
+
+## ブランチの運用ルール
+- staging branch から、 issue branch を分岐する(checkout)
+- staging branchにマージコミットが発生した場合、存在するissue branch はstaging branchの変更分のコミットを取り込む（マージする）：　当分はrebaseはしない
+
+- issue branch から、issue child branch を分岐する (checkout)
+- issue branchにマージコミットが発生した場合、存在するissue child branch はissue branchの変更分のコミットを取り込む（マージする）：　当分はrebaseはしない
+
 # 各リポジトリについて
 
 ## 朝食リポジトリ
@@ -62,34 +93,3 @@ issueブランチはstagingブランチから切る
 - review app環境(PRごとに作成)：https://git-practice-lunch-pr-{N}.herokuapp.com/
 - ステージング環境(対象ブランチ：matsuo-y/git-practice-lunchのstaging)：https://staging-git-practice-lunch.herokuapp.com/
 - 本番環境(対象ブランチ：matsuo-y/git-practice-lunchのmaster)：https://git-practice-lunch.herokuapp.com/
-
-# ブランチについて
-
-## ブランチの種類
-
-- master branch：本番環境にデプロイするコードを格納するブランチ
-- staging branch：staging環境にデプロイするコードを格納するブランチ
-- issue branch：staging branchを起点とし、issueの開発を実装したコードを格納するブランチ
-- issue child branch：issue branchを起点とし、issueの開発に関する小さな単位の機能を実装したコードを格納するブランチ
-
-## ブランチの初期設定
-
-- master branch
- - github.com リポジトリの設定で、誰かが誤って削除しないように、force pushしないように、プロテクトする
- - github.com リポジトリの設定で、誰かが直接コミットしないように、PRを通して、マージするように設定する
-
-- staging branch
- - github.com リポジトリの設定で、誰かが誤って削除しないように、force pushしないように、プロテクトする
- - github.com リポジトリの設定で、誰かが直接コミットしないように、PRを通して、マージするように設定する
-
-## ブランチのマージルール
-- master branchは、staging branchからのPRのみを受け付ける
-- staging branchは、issue branchからのPRのみを受け付ける
-- issue branchは、issue child branchからのPRのみを受け付ける
-
-## ブランチの運用ルール
-- staging branch から、 issue branch を分岐する(checkout)
-- staging branchにマージコミットが発生した場合、存在するissue branch はstaging branchの変更分のコミットを取り込む（マージする）：　当分はrebaseはしない
-
-- issue branch から、issue child branch を分岐する (checkout)
-- issue branchにマージコミットが発生した場合、存在するissue child branch はissue branchの変更分のコミットを取り込む（マージする）：　当分はrebaseはしない

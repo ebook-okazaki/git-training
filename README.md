@@ -45,51 +45,51 @@
 `アプリ内書店の開発のように、リリースまでの開発期間が長いブランチ戦略`
 - issue作成者
  - 朝食リポジトリでのissue作成
- - issueブランチへのPRレビュー(最低1回は修正依頼を出す)
+ - issue branchへのPRレビュー(最低1回は修正依頼を出す)
  - staging・masterブランチへのPR作成
 - branch作成者
- - issueが発行された後、stagingブランチからissueブランチを作成
+ - issueが発行された後、staging branchからissue branchを作成
 - 開発担当者(朝食報告、2名)
- - issueブランチから作業用ブランチを作成し、issueブランチへのPRを作成
+ - issue branchから作業用branchを作成し、issue branchへのPRを作成
 - 検収担当者
- - 開発担当者が、issueブランチをもとにstagingブランチへのPRを作成し、issueブランチをデプロイした結果を確認した後、検収担当者が、stagingブランチへのPRをレビューし、マージする
+ - 開発担当者が、issue branchをもとにstaging branchへのPRを作成し、issue branchをデプロイした結果を確認した後、検収担当者が、staging branchへのPRをレビューし、マージする
 - リリース担当者
- - stagingブランチをもとにmasterブランチへのPRを作成し、stagingブランチをデプロイした結果を確認した後、masterブランチへのPRをマージする
- - masterブランチへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
+ - staging branchをもとにmaster branchへのPRを作成し、staging branchをデプロイした結果を確認した後、master branchへのPRをマージする
+ - master branchへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
 ## 昼食リポジトリ
 `開発内容を即時リリースするように、リリースまでの開発期間が短いブランチ戦略`
 - issue作成者
  - 昼食リポジトリでのissue作成
- - stagingブランチへのPRレビュー(最低1回は修正依頼を出す)
- - masterブランチへのPR作成
+ - staging branchへのPRレビュー(最低1回は修正依頼を出す)
+ - master branchへのPR作成
 - branch作成者
- - issueが発行された後、stagingブランチからissueブランチを作成
+ - issueが発行された後、staging branchからissue branchを作成
 - 開発担当者(昼食報告、1名)
- - issueブランチで作業を行い、stagingブランチへのPRを作成
+ - issue branchで作業を行い、staging branchへのPRを作成
 - 検収担当者
- - 開発担当者が、issueブランチをもとにstagingブランチへのPRを作成し、issueブランチをデプロイした結果を確認した後、検収担当者が、stagingブランチへのPRをレビューし、マージする
+ - 開発担当者が、issue branchをもとにstaging branchへのPRを作成し、issue branchをデプロイした結果を確認した後、検収担当者が、staging branchへのPRをレビューし、マージする
 - リリース担当者
- - stagingブランチをもとにmasterブランチへのPRを作成し、stagingブランチをデプロイした結果を確認した後、masterブランチへのPRをマージする
- - masterブランチへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
+ - staging branchをもとにmaster branchへのPRを作成し、staging branchをデプロイした結果を確認した後、master branchへのPRをマージする
+ - master branchへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
 __ ※昼食でのstagingブランチへのPRレビュー順 __
 
-- 【issueブランチ】
+- 【issue branch】
  - ↓[issue作成者レビュー(PRでレビューした旨のコメント記載)]
  - ↓[検収担当者レビュー(PRマージ実行)]
-- 【stagingブランチ】
+- 【staging branch】
 
 # herokuについて
 
 ## 朝食
 
-- review app環境(対象ブランチ：matsuo-y/git-practice-breakfastのPRマージ元issueブランチ)：https://git-practice-breakfast-pr-{N}.herokuapp.com/
-- ステージング環境(対象ブランチ：matsuo-y/git-practice-breakfastのstaging)：https://staging-git-practice-breakfast.herokuapp.com/
-- 本番環境(対象ブランチ：matsuo-y/git-practice-breakfastのmaster)：https://git-practice-breakfast.herokuapp.com/
+- review app環境(対象ブランチ：matsuo-y/git-practice-breakfastのPRマージ元issue branch)：https://git-practice-breakfast-pr-{N}.herokuapp.com/
+- ステージング環境(対象ブランチ：matsuo-y/git-practice-breakfastのstaging branch)：https://staging-git-practice-breakfast.herokuapp.com/
+- 本番環境(対象ブランチ：matsuo-y/git-practice-breakfastのmaster branch)：https://git-practice-breakfast.herokuapp.com/
 
 ## 昼食
 
-- review app環境(対象ブランチ：matsuo-y/git-practice-lunchのPRマージ元issueブランチ)：https://git-practice-lunch-pr-{N}.herokuapp.com/
-- ステージング環境(対象ブランチ：matsuo-y/git-practice-lunchのstaging)：https://staging-git-practice-lunch.herokuapp.com/
-- 本番環境(対象ブランチ：matsuo-y/git-practice-lunchのmaster)：https://git-practice-lunch.herokuapp.com/
+- review app環境(対象ブランチ：matsuo-y/git-practice-lunchのPRマージ元issue branch)：https://git-practice-lunch-pr-{N}.herokuapp.com/
+- ステージング環境(対象ブランチ：matsuo-y/git-practice-lunchのstaging branch)：https://staging-git-practice-lunch.herokuapp.com/
+- 本番環境(対象ブランチ：matsuo-y/git-practice-lunchのmaster branch)：https://git-practice-lunch.herokuapp.com/

@@ -6,7 +6,7 @@
 - [昼食リポジトリ](https://github.com/matsuo-y/git-practice-lunch)
 - [昼食本番環境(github)](https://matsuo-y.github.io/git-practice-lunch/)
 
-issue用ブランチはstagingブランチから切る
+issueブランチはstagingブランチから切る
 
 # 各リポジトリについて
 
@@ -14,12 +14,12 @@ issue用ブランチはstagingブランチから切る
 `アプリ内書店の開発のように、リリースまでの開発期間が長いブランチ戦略`
 - issue作成者
  - 朝食リポジトリでのissue作成
- - issue用ブランチへのPRレビュー(最低1回は修正依頼を出す)
+ - issueブランチへのPRレビュー(最低1回は修正依頼を出す)
  - staging・masterブランチへのPR作成
 - branch作成者
- - issueが発行された後、stagingブランチからissue用ブランチを作成
+ - issueが発行された後、stagingブランチからissueブランチを作成
 - 開発担当者(朝食報告、2名)
- - issue用ブランチから作業用ブランチを作成し、issue用ブランチへのPRを作成
+ - issueブランチから作業用ブランチを作成し、issueブランチへのPRを作成
 - 検収担当者
  - 開発担当者が、issueブランチをもとにstagingブランチへのPRを作成し、issueブランチをデプロイした結果を確認した後、検収担当者が、stagingブランチへのPRをレビューし、マージする
 - リリース担当者
@@ -33,9 +33,9 @@ issue用ブランチはstagingブランチから切る
  - stagingブランチへのPRレビュー(最低1回は修正依頼を出す)
  - masterブランチへのPR作成
 - branch作成者
- - issueが発行された後、stagingブランチからissue用ブランチを作成
+ - issueが発行された後、stagingブランチからissueブランチを作成
 - 開発担当者(昼食報告、1名)
- - issue用ブランチで作業を行い、stagingブランチへのPRを作成
+ - issueブランチで作業を行い、stagingブランチへのPRを作成
 - 検収担当者
  - 開発担当者が、issueブランチをもとにstagingブランチへのPRを作成し、issueブランチをデプロイした結果を確認した後、検収担当者が、stagingブランチへのPRをレビューし、マージする
 - リリース担当者
@@ -44,7 +44,7 @@ issue用ブランチはstagingブランチから切る
 
 ※昼食でのstagingブランチへのPRレビュー順
 
-- 【issue用ブランチ】
+- 【issueブランチ】
  - ↓[issue作成者レビュー(PRでレビューした旨のコメント記載)]
  - ↓[検収担当者レビュー(PRマージ実行)]
 - 【stagingブランチ】

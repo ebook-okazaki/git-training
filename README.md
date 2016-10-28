@@ -21,9 +21,9 @@ issue用ブランチはstagingブランチから切る
 - 開発担当者(朝食報告、2名)
  - issue用ブランチから作業用ブランチを作成し、issue用ブランチへのPRを作成
 - 検収担当者
- - stagingブランチへのリリース(PRレビュー)実施
+ - 開発担当者が、issueブランチをもとにstagingブランチへのPRを作成し、issueブランチをデプロイした結果を確認した後、検収担当者が、stagingブランチへのPRをレビューし、マージする
 - リリース担当者
- - masterブランチへのリリース(PRレビュー)実施
+ - stagingブランチをもとにmasterブランチへのPRを作成し、stagingブランチをデプロイした結果を確認した後、masterブランチへのPRをマージする
  - masterブランチへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
 ## 昼食リポジトリ
@@ -37,9 +37,9 @@ issue用ブランチはstagingブランチから切る
 - 開発担当者(昼食報告、1名)
  - issue用ブランチで作業を行い、stagingブランチへのPRを作成
 - 検収担当者
- - stagingブランチへのリリース(PRレビュー)実施
+ - 開発担当者が、issueブランチをもとにstagingブランチへのPRを作成し、issueブランチをデプロイした結果を確認した後、検収担当者が、stagingブランチへのPRをレビューし、マージする
 - リリース担当者
- - masterブランチへのリリース(PRレビュー)実施
+ - stagingブランチをもとにmasterブランチへのPRを作成し、stagingブランチをデプロイした結果を確認した後、masterブランチへのPRをマージする
  - masterブランチへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
 ※昼食でのstagingブランチへのPRレビュー順

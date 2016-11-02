@@ -52,9 +52,9 @@
 - 開発担当者(朝食報告、2名)
  - issue branchから作業用branchを作成し、issue branchへのPRを作成
 - 検収担当者
- - 開発担当者が、issue branchをもとにstaging branchへのPRを作成し、issue branchをデプロイした結果を確認した後、検収担当者が、staging branchへのPRをレビューし、マージする
+ - issue作成者がissue branchをもとにstaging branchへのPRを作成し、issue branchをデプロイした結果を確認した後、検収担当者が、staging branchへのPRをレビューし、マージする
 - リリース担当者
- - staging branchをもとにmaster branchへのPRを作成し、staging branchをデプロイした結果を確認した後、master branchへのPRをマージする
+ - issue作成者がstaging branchをもとにmaster branchへのPRを作成し、staging branchをデプロイした結果を確認した後、リリース担当者がmaster branchへのPRをマージする
  - master branchへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
 ## 昼食リポジトリ
@@ -70,10 +70,10 @@
 - 検収担当者
  - 開発担当者が、issue branchをもとにstaging branchへのPRを作成し、issue branchをデプロイした結果を確認した後、検収担当者が、staging branchへのPRをレビューし、マージする
 - リリース担当者
- - staging branchをもとにmaster branchへのPRを作成し、staging branchをデプロイした結果を確認した後、master branchへのPRをマージする
+ - issue作成者がstaging branchをもとにmaster branchへのPRを作成し、staging branchをデプロイした結果を確認した後、リリース担当者がmaster branchへのPRをマージする
  - master branchへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
-__ ※昼食でのstaging branchへのPRレビュー順 __
+### ※昼食でのstaging branchへのPRレビュー順
 
 - 【issue branch】
  - ↓[issue作成者レビュー(PRでレビューした旨のコメント記載)]

@@ -1,95 +1,114 @@
 # git-practice
-朝食と昼食まとめ用リポジトリ
+## 朝食と昼食のまとめ用リポジトリ
 
-- [朝食リポジトリ](https://github.com/matsuo-y/git-practice-breakfast)
-- [朝食本番環境(github)](https://matsuo-y.github.io/git-practice-breakfast/)
-- [昼食リポジトリ](https://github.com/matsuo-y/git-practice-lunch)
-- [昼食本番環境(github)](https://matsuo-y.github.io/git-practice-lunch/)
-
-- [waffleかんばん](https://waffle.io/matsuo-y/git-practice)
+ - [朝食リポジトリ](https://github.com/ebook-okazaki/git-training-breakfast)
+ - [朝食本番環境(github)](https://git-training-breakfast-oka.herokuapp.com/)
+ - [昼食リポジトリ](https://github.com/ebook-okazaki/git-training-lunch)
+ - [昼食本番環境(github)](https://git-training-lunch-oka.herokuapp.com/)
+ - [waffleかんばん](https://waffle.io/ebook-okazaki/git-training)
 
 # ブランチについて
-
 ## ブランチの種類
+### 本番 `eBookJapan`
 
-- master branch：本番環境にデプロイするコードを格納するブランチ
-- staging branch：staging環境にデプロイするコードを格納するブランチ
-- issue branch：staging branchを起点とし、issueの開発を実装したコードを格納するブランチ
-- issue child branch：issue branchを起点とし、issueの開発に関する小さな単位の機能を実装したコードを格納するブランチ
+ - master branch：本番環境にデプロイするコードを格納するブランチ
+ - staging branch：staging環境にデプロイするコードを格納するブランチ
+ - issue branch：staging branchを起点とし、issueの開発を実装したコードを格納するブランチ
+ - issue child branch：issue branchを起点とし、issueの開発に関する小さな単位の機能を実装したコードを格納するブランチ
+
+### 朝食・昼食 `Git練習環境`
+
+ - master branch：本番環境にデプロイするコードを格納するブランチ
+ - issue branch：master branchを起点とし、issueの開発を実装したコードを格納するブランチ
+ - issue child branch：issue branchを起点とし、issueの開発に関する小さな単位の機能を実装したコードを格納するブランチ
 
 ## ブランチの初期設定
 
-- master branch
- - github.com リポジトリの設定で、誰かが誤って削除しないように、force pushしないように、プロテクトする
- - github.com リポジトリの設定で、誰かが直接コミットしないように、PRを通して、マージするように設定する
-
-- staging branch
- - github.com リポジトリの設定で、誰かが誤って削除しないように、force pushしないように、プロテクトする
- - github.com リポジトリの設定で、誰かが直接コミットしないように、PRを通して、マージするように設定する
+ - master branch
+   - github.com リポジトリの設定で、誰かが誤って削除しないように、force pushしないように、プロテクトする
+   - github.com リポジトリの設定で、誰かが直接コミットしないように、PRを通して、マージするように設定する
+ - staging branch (朝食・昼食では使用しておりません)
+   - github.com リポジトリの設定で、誰かが誤って削除しないように、force pushしないように、プロテクトする
+   - github.com リポジトリの設定で、誰かが直接コミットしないように、PRを通して、マージするように設定する
 
 ## ブランチのマージルール
-- master branchは、staging branchからのPRのみを受け付ける
-- staging branchは、issue branchからのPRのみを受け付ける
-- issue branchは、issue child branchからのPRのみを受け付ける
+
+ - master branchは、issue branchからのPRのみを受け付ける
+ - issue branchは、issue child branchからのPRを受け付ける
 
 ## ブランチの運用ルール
-- staging branch から、 issue branch を分岐する(checkout)
-- staging branchにマージコミットが発生した場合、存在するissue branch はstaging branchの変更分のコミットを取り込む（マージする）：　当分はrebaseはしない
 
-- issue branch から、issue child branch を分岐する (checkout)
-- issue branchにマージコミットが発生した場合、存在するissue child branch はissue branchの変更分のコミットを取り込む（マージする）：　当分はrebaseはしない
+ - master branch から、 issue branch を分岐する(checkout)
+ - issue branch から、issue child branch を分岐する (checkout)
+ - 朝食の場合
+   - 1日目
+     - issue branchにマージコミットが発生した場合、存在するissue child branch はissue branchの変更分のコミットを取り込む（mergeする）
+   - 2日目
+     - issue branchにマージコミットが発生した場合、存在するissue child branch はissue branchの変更分のコミットを取り込む（rebaseする）
 
 # 各リポジトリについて
-
 ## 朝食リポジトリ
-`アプリ内書店の開発のように、リリースまでの開発期間が長いブランチ戦略`
-- issue作成者
- - 朝食リポジトリでのissue作成
- - issue branchへのPRレビュー(最低1回は修正依頼を出す)
- - staging・master branchへのPR作成
-- branch作成者
- - issueが発行された後、staging branchからissue branchを作成
-- 開発担当者(朝食報告、2名)
- - issue branchから作業用branchを作成し、issue branchへのPRを作成
-- 検収担当者
- - issue作成者がissue branchをもとにstaging branchへのPRを作成し、issue branchをデプロイした結果を確認した後、検収担当者が、staging branchへのPRをレビューし、マージする
-- リリース担当者
- - issue作成者がstaging branchをもとにmaster branchへのPRを作成し、staging branchをデプロイした結果を確認した後、リリース担当者がmaster branchへのPRをマージする
- - master branchへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
+
+ `アプリ内書店の開発のように、リリースまでの開発期間が長いブランチ戦略`
+
+ - issue作成者
+   - git-trainingリポジトリでのissue作成
+ - branch作成者
+   - master branchからissue branchを作成
+ ---
+ ※2日間で作業を行います
+
+ - 開発担当者(朝食報告:2日間、2名以上)
+   - issue branchからissue child branchを作成
+   - issue child branchで作業を行い、issue branchへのPRを作成
+ - レビューア
+   - issue branchへのPRをレビューし、マージする
+   - コンフリクトした場合、開発担当者がissue child branchで解消する
+     - 1日目はmergeで解消、2日目はrebaseで解消
+ ---
+ - リリース担当者
+   - issue branchからmaster branchへのPRを作成
+ - 検収担当者
+   - master branchへのPRをレビューし、マージする
+ - リリース担当者
+   - デプロイされた結果を確認し、issueに確認した結果を記載
+   - releases/tagsの設定を行う
+ - 検収担当者
+   - リリース担当者の記録を確認し、 issue をクローズ
 
 ## 昼食リポジトリ
-`開発内容を即時リリースするように、リリースまでの開発期間が短いブランチ戦略`
-- issue作成者
- - 昼食リポジトリでのissue作成
- - staging branchへのPRレビュー(最低1回は修正依頼を出す)
- - master branchへのPR作成
-- branch作成者
- - issueが発行された後、staging branchからissue branchを作成
-- 開発担当者(昼食報告、1名)
- - issue branchで作業を行い、staging branchへのPRを作成
-- 検収担当者
- - 開発担当者が、issue branchをもとにstaging branchへのPRを作成し、issue branchをデプロイした結果を確認した後、検収担当者が、staging branchへのPRをレビューし、マージする
-- リリース担当者
- - issue作成者がstaging branchをもとにmaster branchへのPRを作成し、staging branchをデプロイした結果を確認した後、リリース担当者がmaster branchへのPRをマージする
- - master branchへマージ後にデプロイタスクを実行(今回はherokuやgithubが自動実行)し、releases/tagsの設定を行う
 
-### ※昼食でのstaging branchへのPRレビュー順
-
-- 【issue branch】
- - ↓[issue作成者レビュー(PRでレビューした旨のコメント記載)]
- - ↓[検収担当者レビュー(PRマージ実行)]
-- 【staging branch】
+ `開発内容を即時リリースするように、リリースまでの開発期間が短いブランチ戦略`
+ - issue作成者
+   - git-trainingリポジトリでのissue作成
+ - branch作成者
+   - master branchからissue branchを作成
+ - 開発担当者(昼食報告、1名)
+   - issue branchで作業を行い、master branchへのPRを作成
+ - 検収担当者
+   - master branchへのPRをレビューし、マージする
+ - リリース担当者
+   - デプロイされた結果を確認し、issueに確認した結果を記載
+   - releases/tagsの設定を行う
+ - 検収担当者
+   - リリース担当者の記録を確認し、 issue をクローズ
 
 # herokuについて
-
 ## 朝食
 
-- review app環境(対象ブランチ：matsuo-y/git-practice-breakfastのPRマージ元issue branch)：https://git-practice-breakfast-pr-{N}.herokuapp.com/
-- ステージング環境(対象ブランチ：matsuo-y/git-practice-breakfastのstaging branch)：https://staging-git-practice-breakfast.herokuapp.com/
-- 本番環境(対象ブランチ：matsuo-y/git-practice-breakfastのmaster branch)：https://git-practice-breakfast.herokuapp.com/
+ - review app環境(対象ブランチ：ebook-okazaki/git-training-breakfastのPRマージ元issue branch)：[https://git-training-breakfast-ok-pr-{N}.herokuapp.com/](https://git-training-breakfast-ok-pr-{N}.herokuapp.com/)
+ - 本番環境(対象ブランチ：ebook-okazaki/git-training-breakfastのmaster branch)：[https://git-training-breakfast-oka.herokuapp.com/](https://git-training-breakfast-oka.herokuapp.com/)
 
 ## 昼食
 
-- review app環境(対象ブランチ：matsuo-y/git-practice-lunchのPRマージ元issue branch)：https://git-practice-lunch-pr-{N}.herokuapp.com/
-- ステージング環境(対象ブランチ：matsuo-y/git-practice-lunchのstaging branch)：https://staging-git-practice-lunch.herokuapp.com/
-- 本番環境(対象ブランチ：matsuo-y/git-practice-lunchのmaster branch)：https://git-practice-lunch.herokuapp.com/
+ - review app環境(対象ブランチ：ebook-okazaki/git-training-lunchのPRマージ元issue branch)：[https://git-training-lunch-oka-pr-{N}.herokuapp.com/](https://git-training-lunch-oka-pr-{N}.herokuapp.com/)
+ - 本番環境(対象ブランチ：ebook-okazaki/git-training-lunchのmaster branch)：[https://git-training-lunch-oka.herokuapp.com/](https://git-training-lunch-oka.herokuapp.com/)
+
+# Git練習用 issue 例
+
+ - [朝食１](https://github.com/ebook-okazaki/git-training/tree/master/wikis/issue_breakfast1.md)
+   - Git練習 朝食用の issue 記載例 (ローカルとリモートで作業用ブランチ名が同じ)
+ - [朝食２](https://github.com/ebook-okazaki/git-training/tree/master/wikis/issue_breakfast2.md)
+   - Git練習 朝食用の issue 記載例 (ローカルとリモートで作業用ブランチ名が違う)
+ - [昼食](https://github.com/ebook-okazaki/git-training/tree/master/wikis/issue_lunch.md)
+   - Git練習 昼食用の issue 記載例

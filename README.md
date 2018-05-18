@@ -94,6 +94,15 @@
    - リリース担当者の記録を確認し、 issue をクローズ
 
 # Herokuについて
+## デプロイ環境
+
+ - 朝食・昼食のデプロイにはHEROKUのフリー版（無料）を使用しています。
+   - アプリの同時に起動する数は現状、5件という制限があります。
+ - デプロイの画面が表示できない場合
+   - MRを一度 `close` していただき、同時起動数を調整していただき、再度 `open` していただきますと使用できるようになります。
+ - [Heroku](https://jp.heroku.com/)
+ - [Herokuとは](https://tech-camp.in/note/technology/16108/)
+
 ## 朝食
 
  - review app環境(対象ブランチ：ebook-okazaki/git-training-breakfastのPRマージ元issue branch)：[https://git-training-breakfast-ok-pr-{N}.herokuapp.com/](https://git-training-breakfast-ok-pr-{N}.herokuapp.com/)
@@ -103,12 +112,6 @@
 
  - review app環境(対象ブランチ：ebook-okazaki/git-training-lunchのPRマージ元issue branch)：[https://git-training-lunch-oka-pr-{N}.herokuapp.com/](https://git-training-lunch-oka-pr-{N}.herokuapp.com/)
  - 本番環境(対象ブランチ：ebook-okazaki/git-training-lunchのmaster branch)：[https://git-training-lunch-oka.herokuapp.com/](https://git-training-lunch-oka.herokuapp.com/)
-
-## Herokuとは
-
- - 現状、朝食・昼食のデプロイにはHEROKUのフリー版（無料）を使用しております。この為、複数の同時起動数に制限がかかる場合があります。この場合。MRを一度 `close` していただき、同時起動数を調整していただき、再度 `open` していただきますと使用できるようになります。
-   - [Heroku](https://jp.heroku.com/)
-   - [Herokuとは](https://tech-camp.in/note/technology/16108/)
 
 # Git練習用 issue 例
 
